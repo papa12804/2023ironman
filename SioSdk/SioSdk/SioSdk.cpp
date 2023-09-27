@@ -33,7 +33,7 @@ bool Install()
     PathRemoveFileSpec(szUnquotedPath);
     StringCbCat(szUnquotedPath, MAX_PATH, TEXT("\\resources\\lib\\Sio.sys"));
     StringCbPrintf(szPath, MAX_PATH, TEXT("%s"), szUnquotedPath);
-    printf("System file path: %s\n", szPath);
+    printf("System file path: %S\n", szPath);
 
     // Get a handle to the SCM database. 
 
