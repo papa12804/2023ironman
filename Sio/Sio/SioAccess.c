@@ -612,7 +612,7 @@ ReadIoPort(
         return STATUS_INVALID_PARAMETER;
     }
 
-    Data = READ_PORT_UCHAR((PUCHAR)(ULONG_PTR)InputData->PortNumber);
+    Data = __inbyte(PortNumber);
     KdPrint(("Data %x\n", Data));
     RtlCopyMemory(outBuf, &Data, sizeof(UCHAR));
 
@@ -649,7 +649,7 @@ WriteIoPort(
         return STATUS_INVALID_PARAMETER;
     }
 
-    WRITE_PORT_UCHAR((PUCHAR)(ULONG_PTR)InputData->PortNumber, InputData->IoPortData.CharData);
+    __outbyte(PortNumber, InputData->IoPortData.CharData);
 
     return STATUS_SUCCESS;
 }
