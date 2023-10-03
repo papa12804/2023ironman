@@ -280,8 +280,6 @@ void CloseSioConfig()
 
 unsigned int GetHwmBase()
 {
-    unsigned int IndexPort = INDEX_PORT;
-    unsigned int DataPort = DATA_PORT;
     unsigned int BaseLow, BaseHigh;
 
     printf("GetHwmBase\n");
