@@ -7,6 +7,7 @@
 #pragma warning(default:4201)
 #include <cfgmgr32.h>
 #include <initguid.h>
+#include <PathCch.h>
 
 #pragma once
 #ifdef SIOSDK_EXPORTS

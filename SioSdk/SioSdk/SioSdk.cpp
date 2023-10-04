@@ -4,6 +4,7 @@
 #pragma comment(lib, "advapi32.lib")
 #pragma comment(lib, "shlwapi.lib")
 #pragma comment(lib, "cfgmgr32.lib")
+#pragma comment(lib, "pathcch.lib")
 
 unsigned char ReadIoPort(unsigned int Index);
 bool WriteIoPort(unsigned int Index, unsigned int Data);
@@ -30,7 +31,7 @@ bool Install()
         printf("Cannot install service (%d)\n", GetLastError());
         return Result;
     }
-    PathRemoveFileSpec(szUnquotedPath);
+    PathCchRemoveFileSpec(szUnquotedPath, MAX_PATH);
     StringCbCat(szUnquotedPath, MAX_PATH, TEXT("\\resources\\lib\\Sio.sys"));
     StringCbPrintf(szPath, MAX_PATH, TEXT("%s"), szUnquotedPath);
     printf("System file path: %S\n", szPath);
